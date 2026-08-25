@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+
+.env
+.venv/
+uv.lock
+
+
+spacy_model_pipeline/
