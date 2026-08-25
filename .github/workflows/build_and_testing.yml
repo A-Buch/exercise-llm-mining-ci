@@ -39,24 +39,24 @@ jobs:
     strategy:
       #fail-fast: false
       matrix:
-        os: [ubuntu-latest]  # TODO test for windows-latest
+        os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     name: Runs on "${{matrix.os}}"
-    # define steps of job "build_and_test"
+    # define steps of job "build"
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v7  # potentially faster: uses: astral-sh/setup-uv@v5
+      uses: actions/checkout@v7
     - name: Set up uv (latest version)
-      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d #astral-sh/setup-uv@v5
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d 
       with:
         enable-cache: true
         cache-dependency-glob: "pyproject.toml"
     - name: Set up Python, using version defined in pyproject.toml
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
         python-version-file: "pyproject.toml"
     # test to install packages using uv
-    - name: Install pacakages via uv
+    - name: Install packages via uv
       run: |
         pip install uv
         uv build
@@ -69,12 +69,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v7
     - name: Set up uv
-      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d #astral-sh/setup-uv@v5
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d
       with:
         enable-cache: true
         cache-dependency-glob: "pyproject.toml"
     - name: Run Python tests [pytest]
       working-directory: ./tests
       run: |
-        uv run python -m pytest ./test_*.py
-        echo checking for test errors in ./tests/test_*.py
+        uv run python -m pytest ./src/test_*.py
+        echo checking for test errors in ./tests/src/test_*.py
