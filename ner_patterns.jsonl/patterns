@@ -58,9 +58,9 @@
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Ii]nland waterway.*|^[Ii]nland waterway.*"}}], "subgroup_name":"inland_waterways", "group_name":"shipping"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* IWW.*|^IWW.*"}}], "subgroup_name":"inland_waterways", "group_name":"shipping"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Ww]ater.*routes.*|^[Ww]ater.*routes.*"}}], "subgroup_name":"inland_waterways", "group_name":"shipping"}
- 
-{"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransport|^[Tt]ransport"}}], "subgroup_name":"transport_general", "group_name":"transport"}       
-{"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransportation|^[Tt]ransportation"}}], "subgroup_name":"transport_general", "group_name":"transport"}       
+
+{"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransport|^[Tt]ransport"}}], "subgroup_name":"transport_general", "group_name":"transport"}
+{"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransportation|^[Tt]ransportation"}}], "subgroup_name":"transport_general", "group_name":"transport"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransport.*|^[Tt]ransport.*"}}, {"LOWER": "sector"}], "subgroup_name":"transport_general", "group_name":"transport"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransport.*|^[Tt]ransport.*"}}, {"LOWER": "infrastructure"}], "subgroup_name":"transport_general", "group_name":"transport"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Tt]ransport.*|^[Tt]ransport.*"}}, {"LOWER": "network"}], "subgroup_name":"transport_general", "group_name":"transport"}
@@ -219,4 +219,3 @@
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Ee]mergency.*clinic.*|^[Ee]mergency.*clinic.*"}}], "subgroup_name":"healthcare_clinics",  "group_name":"healthcare"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Ee]mergency.*services.*|^[Ee]mergency.*services.*"}}], "subgroup_name":"healthcare_clinics",  "group_name":"healthcare"}
 {"label":"CI_TYPE","pattern": [{"TEXT": {"REGEX": ".* [Ee]mergency.*care.*|^[Ee]mergency.*care.*"}}], "subgroup_name":"healthcare_clinics",  "group_name":"healthcare"}
-

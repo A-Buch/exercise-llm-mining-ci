@@ -25,6 +25,7 @@ dependencies = [
     "python-dotenv>=1.2.3",
     "requests-mock>=1.12.1",
     "ipytest>=0.14.2",
+    "pre-commit>=4.6.2",
 ]
 
 [tool.ruff]
@@ -60,6 +61,3 @@ fixable = ["ALL"]
 
 [tool.uv.sources]
 py-banshee = { git = "https://github.com/mike-mendoza/py_banshee" }
-
-
-

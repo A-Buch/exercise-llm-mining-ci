@@ -34,7 +34,7 @@ jobs:
       - name: Check workflow files
         run: ${{ steps.get_actionlint.outputs.executable }} -color
         shell: bash
-        
+
   build:
     strategy:
       #fail-fast: false
@@ -47,7 +47,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v7
     - name: Set up uv (latest version)
-      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d 
+      uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d
       with:
         enable-cache: true
         cache-dependency-glob: "pyproject.toml"

@@ -1,4 +1,5 @@
 ## NOTE: local run: pre-commit run --all-files
+## NOTE 2: disable pre-commit hooks in commits with flag --no-verify, eg. git commit --no-verify -m "feat: xxx"
 
 repos: #  definitions see: https://pre-commit.com/hooks.html
 
