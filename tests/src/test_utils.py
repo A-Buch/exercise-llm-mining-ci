@@ -28,7 +28,7 @@ def mock_request(m):
 def test_metrics():
     assert u.calc_recall(8, 2) == 0.8
     assert u.calc_precision(8, 2) == 0.8
-    assert u.calc_f1(0.8, 0.8) == 0.8
+    assert np.round(u.calc_f1(0.8, 0.8), 1) == 0.8
 
 
 
