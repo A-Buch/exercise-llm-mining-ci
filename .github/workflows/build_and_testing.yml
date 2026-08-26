@@ -10,7 +10,7 @@ on:
       branches:
       - main
 
-  ## Example (for best practice):
+  # # Example (for best practice):
   # push:
   #   branches:
   #   - "**" # matches every branch
@@ -22,12 +22,12 @@ on:
 
 # define 3 jobs [actionlint, build, coverage]
 jobs:
-
+  # 1. JOB: checks if workflow file is correctly formatted
   actionlint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
       - name: Download actionlint
+      - uses: actions/checkout@v7
         id: get_actionlint
         run: bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
         shell: bash
@@ -35,6 +35,7 @@ jobs:
         run: ${{ steps.get_actionlint.outputs.executable }} -color
         shell: bash
 
+  # 2. JOB: install packages from pyproject.toml under ubuntu/windows OS
   build:
     strategy:
       #fail-fast: false
@@ -62,6 +63,7 @@ jobs:
         uv build
         echo installed packages via uv, using universal/cross-platform dependencies
 
+  # 3. JOB: automated execution of tests
   coverage:
     name: Coverage Testing
     runs-on: ubuntu-latest

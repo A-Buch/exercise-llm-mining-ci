@@ -5,10 +5,6 @@
 import re
 
 
-def add(a, b):
-    return a + b
-
-
 def extract_citation_info(citation_text: str) -> str:
     """Extract citation information from the document name."""
 

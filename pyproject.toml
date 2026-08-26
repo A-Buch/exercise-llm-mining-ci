@@ -29,11 +29,12 @@ dependencies = [
 ]
 
 [tool.ruff]
-line-length = 120
+line-length = 180
 exclude = [".venv", "versioneer.py", "*_cache"] # keep formating ".ipynb"
 
 [tool.ruff.format]
 quote-style = "double"
+exclude = ["*.ipynb"]
 
 [tool.ruff.lint]
 # see, https://docs.astral.sh/ruff/rules
@@ -56,7 +57,7 @@ select = [
     "RUF100", "RUF101",
 ]
 ignore = ["C901", "E714", "I001"]
-exclude = [".ipynb"]
+exclude = ["*.ipynb"]
 fixable = ["ALL"]
 
 [tool.uv.sources]

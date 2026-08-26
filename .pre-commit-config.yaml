@@ -10,7 +10,7 @@ repos: #  definitions see: https://pre-commit.com/hooks.html
     rev: v0.11.5
     hooks:
     -   id: ruff     # run linter (pre-commit.yml incl isort thus no need to add it as addtional hook)
-        args: [ --fix, --show-fixes]
+        args: [ --fix, --show-fixes, --unsafe-fixes]
     -   id: ruff-format    # run formatter
 
 # Black hooks (--preview flag allows autofix of line-lengths which were before detected by ruff linter)
@@ -21,6 +21,13 @@ repos: #  definitions see: https://pre-commit.com/hooks.html
         args: [--check, --diff, --preview]
     -   id: black-jupyter
 
+# check pyproject.toml file
+-   repo: https://github.com/abravalheri/validate-pyproject
+    rev: v0.24.1
+    hooks:
+    -   id: validate-pyproject  # Validate the contents of pyproject.toml
+
+
 # supports version control of jupyter notebooks, removes cell outputs
 -   repo: https://github.com/kynan/nbstripout
     rev: 0.8.1
@@ -28,13 +35,8 @@ repos: #  definitions see: https://pre-commit.com/hooks.html
     -   id: nbstripout
         files: ".ipynb"
 
-# check pyproject.toml file
--   repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.24.1
-    hooks:
-    -   id: validate-pyproject  # Validate the contents of pyproject.toml
 
-# pre-commit-hooks (as part of Continuous Integration)
+# Some out-of-the-box hooks for pre-commit
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
